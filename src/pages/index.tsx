@@ -1,9 +1,10 @@
+import Head from 'next/head';
+import type { NextPage } from 'next';
 import { Box } from 'components/Box';
 import { Button } from 'components/Button';
 import { ResponsiveBox } from 'components/ResponsiveBox';
 import { ResponsiveBoxVariants } from 'components/ResponsiveBoxVariants';
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import { Dialog, DialogTrigger, DialogContent, Title } from 'components/dialog';
 
 const Home: NextPage = () => {
   return (
@@ -49,6 +50,16 @@ const Home: NextPage = () => {
         >
           ResponsiveBoxVariants
         </ResponsiveBoxVariants>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Open dialog</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <Title>This is a title</Title>
+            <p>Order complete.</p>
+            <p>You&apos;ll receive a confirmation email in the next few minutes.</p>
+          </DialogContent>
+        </Dialog>
       </main>
 
       <footer>Footer</footer>
